@@ -1,0 +1,1 @@
+student name = ashwinclass =  12class = 3.500000
