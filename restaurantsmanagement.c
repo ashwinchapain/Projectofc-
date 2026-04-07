@@ -8,8 +8,7 @@ int main()
     char order[10];
     int quantity[100];
     int item[100];
-    int price[5] = {120, 50, 400, 80, 200};
-    int item2[5] = {1, 2, 3, 4, 5};
+
     for (int i = 0; i < 10; i++)
     {
         printf("====== RESTAURANTS MANAGEMENT SYSTEM ====== \n");
@@ -24,44 +23,46 @@ int main()
         {
         case 1:
             showMenu();
+            printf("\n\n");
             break;
 
         case 2:
             showMenu();
 
-            printf(" 1.ENTER THE FOOD ITEM :\n ");
-            printf("2.EXIT TO THE MAINMENU \t......");
+            char determine = 'Y';
+            int selection = 0;
 
-            scanf("%d", &select);
-            switch (select)
+            while (determine == 'Y' || determine == 'y')
             {
-            case 1:
-                printf("\n\n");
-                for (int i = 0; i <= 5; i++)
-                {
-                    printf("ENTER THE FOOD ITEM :\t");
-                    scanf("%d", &item[i]);
-                    printf("ENTER THE QUANTITY :\t");
-                    scanf("%d", &quantity[i]);
-                }
-                printf("The item is selected successfully ");
-                break;
+                printf("enter the food item\t  ");
+                scanf("%d", &item[selection]);
+                getchar();
 
-            case 6:
-                goto back_to_the_main;
+                printf("enter the quantity :\t");
+                scanf("%d", &quantity[selection]);
+                getchar();
 
-            default:
-                break;
+                printf("DO YOU WANT TO CONTINUE ?\t");
+                scanf("%c", &determine);
+                selection++;
             }
 
-        back_to_the_main:
+            if (determine == 'n' || determine == 'N')
+                ;
+            {
+                printf(" THANK YOU FOR THE ORDER :) \n");
+                printf("THE ITEM IS SELECTED   SUCCESSFULLY ");
+            }
+
             break;
 
         case 3:
+            break;
 
-        default:
+        case 4:
             return 1;
 
+        default:
             break;
         }
     }
