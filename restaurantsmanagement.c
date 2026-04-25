@@ -8,6 +8,16 @@ int main()
     char order[10];
     int quantity[100];
     int item[100];
+    char *menuitem[100];
+    menuitem[0] = "Momo";
+    menuitem[1] = "chowmein";
+    menuitem[2] = "pizza";
+    menuitem[3] = "coffee";
+    menuitem[4] = "burger";
+    // menuitem[6]
+    // menuitem[7]
+    // menuitem[8]
+    // menuitem[9]
 
     for (int i = 0; i < 10; i++)
     {
@@ -48,16 +58,51 @@ int main()
             }
 
             if (determine == 'n' || determine == 'N')
-                ;
+
             {
                 printf(" THANK YOU FOR THE ORDER :) \n");
                 printf("THE ITEM IS SELECTED   SUCCESSFULLY ");
             }
 
             break;
-
         case 3:
-            break;
+            int j = 0;
+
+            printf("you order these  items\n :");
+
+            // for (int i = 0; i <= selection; i++)
+            // item [i];
+            int i = 0;
+            while (item[i] == *menuitem[i])
+
+            {
+                printf("%s", menuitem[i]);
+                i++;
+            }
+
+            // {
+            //     printf("%")
+            // }
+
+            // for (int  i = 0; i < selection; i++)
+            // {
+            //     printf(" %s\t    %d\t\n", menuitem[selection], quantity[selection]);
+
+            // }
+
+            // case 3:
+            //     printf("you order this item :\n ");
+
+            //     printf("ITEMS :\t QUANTITY : \n");
+            //     int i = 0;
+
+            //     // for (int i = item[0]; i <= selection; i++)
+            //     // {
+            //     //     printf(" %s\t    %d\t\n", menuitem[selection], quantity[selection]);
+            //     // }
+            //     // printf("\n\n\n\n\n");
+
+            // break;
 
         case 4:
             return 1;
@@ -66,6 +111,7 @@ int main()
             break;
         }
     }
+
     return 0;
 }
 
