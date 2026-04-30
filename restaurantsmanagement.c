@@ -8,13 +8,11 @@ int main()
     char order[10];
     int quantity[100];
     int item[100];
-    char *menuitem[100];
-    menuitem[0] = "Momo";
-    menuitem[1] = "chowmein";
-    menuitem[2] = "pizza";
-    menuitem[3] = "coffee";
-    menuitem[4] = "burger";
-    // menuitem[6]
+    char *menuitem[] = {"momo", "chowmein", "pizza", "coffee", "burhger"};
+    int total_item = 5;
+    int selection = 0;
+    int selection_1 = 0;
+
     // menuitem[7]
     // menuitem[8]
     // menuitem[9]
@@ -40,7 +38,6 @@ int main()
             showMenu();
 
             char determine = 'Y';
-            int selection = 0;
 
             while (determine == 'Y' || determine == 'y')
             {
@@ -49,12 +46,13 @@ int main()
                 getchar();
 
                 printf("enter the quantity :\t");
-                scanf("%d", &quantity[selection]);
+                scanf("%d", &quantity[selection_1]);
                 getchar();
 
                 printf("DO YOU WANT TO CONTINUE ?\t");
                 scanf("%c", &determine);
                 selection++;
+                selection_1++;
             }
 
             if (determine == 'n' || determine == 'N')
@@ -69,16 +67,16 @@ int main()
             int j = 0;
 
             printf("you order these  items\n :");
+            for (int i = 0; i < selection; i++)
+            {
+                printf("%s", menuitem[item[i] - 1]);
+            }
 
             // for (int i = 0; i <= selection; i++)
             // item [i];
-            int i = 0;
-            while (item[i] == *menuitem[i])
 
-            {
-                printf("%s", menuitem[i]);
-                i++;
-            }
+            // {
+            //     printf("%s", *menuitem[i])
 
             // {
             //     printf("%")
